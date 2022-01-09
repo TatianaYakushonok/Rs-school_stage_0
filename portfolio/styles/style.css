@@ -32,12 +32,38 @@ body {
     background: #000000 url("../img/bg.jpg") no-repeat;
 }
 
+h1,
+h2 {
+    font-family: 'Merriweather', serif;
+}
+
 h1 {
     padding-bottom: 10px;
     font-size: 60px;
-    font-family: 'Merriweather', serif;
     font-weight: 700;
     line-height: 120px;
+}
+
+h2 { 
+    overflow: hidden;
+    font-size: 40px;
+    line-height: 80px;
+    color: #BDAE82;
+}
+
+.skills_header::before,
+.skills_header::after {
+    content: '';
+    margin: 20px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    box-sizing: border-box;
+    /*width: 100%;*/
+    height: 2px;
+    background-color: #BDAE82;
+    border: solid #BDAE82;
+    border-width: 0 130px;
 }
 
 li {
@@ -90,7 +116,7 @@ a {
 .hero {
     width: 470px;
     height: 330px;
-    margin: 250px 80px 330px;
+    padding: 160px 80px 345px;
 }
 
 .hero_text {
@@ -113,4 +139,46 @@ a {
 
 .hero_button-link:hover {
     color: #ffffff;
+}
+
+.skills {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
+    line-height: 36px;
+}
+
+.skills_item {
+    display: flex;
+    margin-top: 60px;
+}
+
+.skills_item-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px;
+    width: 320px;
+    height: 240px;
+}
+
+.skills_item-list:last-child {
+    padding-right: 0;
+}
+
+.skills_item-list:first-child {
+    padding-left: 0;
+}
+
+.skills_title {
+    font-size: 20px;
+    line-height: 40px;
+    font-weight: 700;
+    padding: 50px 0 20px;
+}
+
+.skills_description {
+   width: 280px;
+   text-align: center;
 }
