@@ -299,7 +299,6 @@ a {
 }
 
 .price_button-link {
-    /*padding: 20px 39px;*/
     font-size: 20px;
     color: #000000;
 }
@@ -312,4 +311,56 @@ a {
 .price_button-link:hover {
     padding: 20px 36px;
     color:#BDAE82;
+}
+
+.contacts {
+    display: flex;
+    align-items: flex-end;
+    height: 700px;
+    margin-top: 100px;
+    padding: 0;
+    background: #000000 url("../img/contacts.jpg") no-repeat;
+}
+
+.contacts_container {
+    width: 450px;
+    margin-top: 60px;
+    margin-right: 20px;
+}
+
+.contacts_header {
+    padding-bottom: 40px;
+    font-family: 'Merriweather', serif;
+    font-size: 40px;
+    line-height: 80px;
+    color: #BDAE82;
+}
+
+.contacts_input {
+    width: 446px;
+    height: 46px;
+    margin-bottom: 20px;
+    padding: 0 20px;
+    box-sizing: border-box;
+    color: #BDAE82;
+    border: 2px solid #BDAE82;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.contacts_textarea {
+    height: 100px;
+    padding-top: 16px;
+}
+
+.button_contacts {
+    font-size: 20px;
+    color: #000000;
+    background-color: #BDAE82;
+    cursor: pointer;
+}
+
+.button_contacts:hover {
+    color: #BDAE82;
+    border: 2px solid #BDAE82;
+    background-color: #000000;
 }
