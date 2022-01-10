@@ -255,3 +255,55 @@ a {
     top: 50%;
     transform: translate(-50%, -50%);
 }
+
+/*.price {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}*/
+
+.price_item {
+    width: 1400px;
+    display: flex;
+    justify-content: space-between; 
+}
+
+.price_item-list {
+    width: 446px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 43px 0;
+    border: 2px solid #BDAE82;
+}
+
+.price_title {
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 56px;
+}
+
+.price_summ {
+    padding: 20px 0;
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 48px;
+    color: #BDAE82;
+}
+
+.items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.price_button {
+    margin-top: 40px;
+    background-color: #BDAE82;
+}
+
+.price_button-link {
+    color: #000000;
+}
