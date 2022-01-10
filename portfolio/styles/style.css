@@ -256,12 +256,6 @@ a {
     transform: translate(-50%, -50%);
 }
 
-/*.price {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}*/
-
 .price_item {
     width: 1400px;
     display: flex;
@@ -305,5 +299,17 @@ a {
 }
 
 .price_button-link {
+    /*padding: 20px 39px;*/
+    font-size: 20px;
     color: #000000;
+}
+
+.price_button:hover {
+    border: 2px solid #BDAE82;
+    background-color: #000000;
+}
+
+.price_button-link:hover {
+    padding: 20px 36px;
+    color:#BDAE82;
 }
