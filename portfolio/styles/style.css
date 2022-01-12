@@ -80,14 +80,6 @@ a {
     width: 1440px;
 }
 
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 0;
-    font-size: 20px;
-}
-
 .section {
     display: flex;
     flex-direction: column;
@@ -102,36 +94,55 @@ a {
     border: none;
 }
 
+/* ------------------ HEADER ----------------------*/
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    font-size: 20px;
+    line-height: 50px;
+}
+
+/* ------------------ logo ----------------------*/
+
+.logo {
+    height: 50px;
+}
+
+/* ------------------ nav ----------------------*/
+
 .nav_conteiner {
     display: flex;
 }
 
 .nav_menu {
-    margin-right: 30px;
     display: flex;
+    margin-right: 30px;
 }
 
 .nav_menu-link {
     padding-left: 30px;
 }
 
-.nav_link-hover:hover {
-    border-bottom: 1px solid #ffffff;
-}
-
-.nav_link-hover:active {
+.nav_link-hover:active,
+.langage_link-activ,
+.langage_link:hover {
     color: #BDAE82;
     border-bottom: none;
 }
 
-.langage_link-activ {
-    color: #BDAE82;
+.nav_link-hover:hover {
+    border-bottom: 1px solid #ffffff;
 }
+
+/* ------------------ SECTION HERO ----------------------*/
 
 .hero {
     width: 470px;
     height: 330px;
-    padding: 160px 80px 345px;
+    padding: 160px 80px 330px;
 }
 
 .hero_text {
