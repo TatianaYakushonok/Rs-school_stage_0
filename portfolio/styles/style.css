@@ -248,6 +248,17 @@ a {
     position: relative;
 }
 
+.video_icon {
+    background-image: url('../img/Play_hover.svg');
+    background-size: contain;
+    background-repeat: no-repeat;  
+    transition: 0.3s;
+}
+
+.video_icon:hover {
+    filter: invert(73%) sepia(34%) saturate(309%) hue-rotate(7deg) brightness(91%) contrast(85%);
+}
+
 .icon_play {
     width: 130px;
     height: 130px;
@@ -255,11 +266,6 @@ a {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-}
-
-.video_icon:hover {
-    cursor: pointer;
-    background-image: url("../Play_hover 2.svg");
 }
 
 /* ------------------ SECTION PRICE ----------------------*/
