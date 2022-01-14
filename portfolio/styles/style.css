@@ -76,15 +76,16 @@ a {
 }
 
 .conteiner {
-    margin: auto;
     width: 1440px;
+    margin: auto;
+    /*padding: 0 20px;*/
 }
 
 .section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 100px 20px 0;
+    padding: 100px 0 0;
     line-height: 36px;
 }
 
@@ -96,11 +97,11 @@ a {
 
 /* ------------------ HEADER ----------------------*/
 
-.header {
+.header-conteiner {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 20px 20px 0;
     font-size: 20px;
     line-height: 50px;
 }
@@ -229,6 +230,7 @@ a {
 /* ------------------ galery ----------------------*/
 
 .portfolio_galery {
+    width: 1400px;
     display: flex;
     justify-content: space-between;
     flex-flow: row wrap;
@@ -375,7 +377,7 @@ a {
 
 /* ------------------ FOOTER ----------------------*/
 
-.footer {
+.footer-conteiner {
     padding: 50px 30px;
     display: flex;
     justify-content: space-between;
@@ -398,8 +400,41 @@ a {
     width: 188px;
 }
 
-.social-link {
+.social_inst-link {
     height: 32px;
+    background-image: url('../img/inst 1.svg');
+    background-size: contain;
+    background-repeat: no-repeat;  
+    transition: 0.3s;
 }
-    
 
+.social_fb-link {
+    height: 32px;
+    background-image: url('../img/fb 1.svg');
+    background-size: contain;
+    background-repeat: no-repeat;  
+    transition: 0.3s; 
+}
+
+.social_tw-link {
+    height: 32px;
+    background-image: url('../img/tw 1.svg');
+    background-size: contain;
+    background-repeat: no-repeat;  
+    transition: 0.3s;
+}
+
+.social_pint-link {
+    height: 32px;
+    background-image: url('../img/pinterest 1.svg');
+    background-size: contain;
+    background-repeat: no-repeat;  
+    transition: 0.3s;
+}
+
+.social_inst-link:hover,
+.social_fb-link:hover,
+.social_tw-link:hover,
+.social_pint-link:hover {
+    filter: invert(73%) sepia(34%) saturate(309%) hue-rotate(7deg) brightness(91%) contrast(85%);
+}
