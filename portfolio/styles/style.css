@@ -89,10 +89,59 @@ a {
     line-height: 36px;
 }
 
-.button {
+/* ------------------ BUTTON ----------------------*/
+
+.btn {
+    width: 220px;
+    height: 55px;
+    border: none; 
+}
+
+/* ------------------ btn-gold ----------------------*/
+
+.btn-gold {
     width: 220px;
     height: 55px;
     border: none;
+    background-color: #BDAE82;
+}
+
+.btn-gold-link {
+    color: #000000;
+    font-size: 20px;
+    line-height: 40px;
+}
+
+.btn-gold:hover,
+.btn-gold-link:hover,
+.btn-transporant:hover,
+.btn-transporant-link:hover {
+    color: #ffffff;
+    cursor: pointer;
+}
+
+/* ------------------ btn-transporant ----------------------*/
+
+.btn-transporant {
+    width: 220px;
+    height: 55px;
+    margin-left: 5px;
+    border: 2px solid #BDAE82;
+    background-color: transparent;
+}
+
+.btn-transporant-link {
+    color: #BDAE82;
+    font-size: 20px;
+    line-height: 40px;
+}
+
+.btn-activ {
+    background-color: #BDAE82;
+}
+
+.btn-activ-link {
+    color: #000000;
 }
 
 /* ------------------ HEADER ----------------------*/
@@ -166,22 +215,9 @@ a {
 }
 
 .hero_text {
+    padding-bottom: 25px;
     font-size: 20px;
     line-height: 40px;
-}
-
-.hero_button {
-    margin-top: 25px;
-    background-color: #BDAE82;
-}
-
-.hero_button-link {
-    line-height: 40px;
-    color: #000000;
-}
-
-.hero_button-link:hover {
-    color: #ffffff;
 }
 
 /* ------------------ SECTION SKILLS ----------------------*/
@@ -220,30 +256,6 @@ a {
 .portfolio_item {
     display: flex;
     margin: 0 0 60px;
-}
-
-.portfolio_button {
-    margin-left: 5px;
-    border: 2px solid #BDAE82;
-    background-color: #000000;
-}
-
-.portfolio_button-link {
-    padding: 20px 80px;
-    color: #BDAE82;
-}
-
-.portfolio_button:hover,
-.portfolio_button:active,
-.portfolio_button-active {
-    border: none;
-    background-color: #BDAE82;
-}
-
-.portfolio_button-link:hover,
-.portfolio_button-link:active,
-.portfolio_button-link-active {
-    color: #000000;
 }
 
 /* ------------------ galery ----------------------*/
@@ -322,29 +334,10 @@ a {
 }
 
 .items {
+    padding-bottom: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.price_button {
-    margin-top: 40px;
-    background-color: #BDAE82;
-}
-
-.price_button-link {
-    font-size: 20px;
-    color: #000000;
-}
-
-.price_button:hover {
-    border: 2px solid #BDAE82;
-    background-color: #000000;
-}
-
-.price_button-link:hover {
-    padding: 20px 36px;
-    color:#BDAE82;
 }
 
 /* ------------------ SECTION CONTACTS ----------------------*/
@@ -386,19 +379,6 @@ a {
 .contacts_textarea {
     height: 100px;
     padding-top: 16px;
-}
-
-.button_contacts {
-    font-size: 20px;
-    color: #000000;
-    background-color: #BDAE82;
-    cursor: pointer;
-}
-
-.button_contacts:hover {
-    color: #BDAE82;
-    border: 2px solid #BDAE82;
-    background-color: #000000;
 }
 
 /* ------------------ FOOTER ----------------------*/
