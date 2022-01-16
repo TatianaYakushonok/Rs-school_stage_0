@@ -40,29 +40,28 @@
                     <h1 class="hero_title">Alexa Rise</h1>
                     <p class="hero_text">Save sincere emotions, romantic feelings and happy moments of life together 
                     with professional photographer Alexa Rise</p>
-                    <!--<button class="button hero_button"><a class="hero_button-link" href="#">Hire me</a></button>-->
                     <button class="btn-gold"><a class="btn-gold-link" href="#">Hire me</a></button>
                 </section>
             </div>
             <section class="section skills">
-                <h2 class="main_header">Skills</h2>
-                <div class="skills_item">
-                    <div class="skills_item-list">
+                <h2 class="section-title">Skills</h2>
+                <div class="skills_items">
+                    <div class="skill_item">
                         <img class="icon" src="./img/camera 1.svg" alt="camera_picture">
                         <h3 class="skills_title">Digital photography</h3>
                         <p class="skills_description">High-quality photos in the studio and on the nature</p>
                     </div>
-                    <div class="skills_item-list">
+                    <div class="skill_item">
                         <img class="icon" src="./img/video 1.svg" alt="video_picture">
                         <h3 class="skills_title">Video shooting</h3>
                         <p class="skills_description">Capture your moments so that they always stay with you</p>
                     </div>
-                    <div class="skills_item-list">
+                    <div class="skill_item">
                         <img class="icon" src="./img/image 1.svg" alt="image_picture">
                         <h3 class="skills_title">Retouch</h3>
                         <p class="skills_description">I strive to make photography surpass reality</p>
                     </div>
-                    <div class="skills_item-list">
+                    <div class="skill_item">
                         <img class="icon" src="./img/mic 1.svg" alt="microfon_picture">
                         <h3 class="skills_title">Audio</h3>
                         <p class="skills_description">Professional sounds recording for video, advertising, portfolio</p>
@@ -70,7 +69,7 @@
                 </div>
             </section>
             <section class="section portfolio">
-                <h2 class="main_header">Portfolio</h2>
+                <h2 class="section-title">Portfolio</h2>
                 <div class="portfolio_item">
                     <button class="btn-transporant"><a class="btn-transporant-link" href="">Winter</a></button>
                     <button class="btn-transporant"><a class="btn-transporant-link" href="">Spring</a></button>
@@ -99,14 +98,14 @@
                 </div>
             </section>
             <section class="section video">
-                <h2 class="main_header">Video</h2>
+                <h2 class="section-title">Video</h2>
                 <div class="video_section">
                     <img src="./img/video-player.jpg" alt="Video">
                     <a class="video_icon"><img class="icon_play" src="./img/Play_hover.svg" alt="icon_play"></a>
                 </div>    
             </section>
             <section class="section price">
-                <h2 class="main_header">Price</h2>
+                <h2 class="section-title">Price</h2>
                 <div class="price_item">
                     <div class="price_item-list">
                         <h3 class="price_title">Standard</h3>
@@ -148,25 +147,25 @@
             </section>
             <section class="section contacts">
                 <div class="contacts_container">
-                    <h3 class="contacts_header">Contact me</h3>
+                    <h2 class="contacts_title">Contact me</h2>
                     <form class="contacts_form" action="#">
-                        <ul class="contacts_item">
-                            <li class="contacts_item-list">
+                        <div class="contacts_item">
+                            <div class="contacts_item-list">
                                 <lable for="email"></lable>
-                                <input class="contacts_input" type="email" id="email" name="user_email" value="E-mail">
-                            </li>
-                            <li class="contacts_item-list">
+                                <input type="email" id="email" name="user_email" placeholder="E-mail" class="input-style">
+                            </div>
+                            <div class="contacts_item-list">
                                 <lable for="phone"></lable>
-                                <input class="contacts_input" type="tel" id="phone" name="phone" value="Phone">
-                            </li>
-                            <li class="contacts_item-list">
+                                <input type="tel" id="phone" name="phone" placeholder="Phone" class="input-style">
+                            </div>
+                            <div class="contacts_item-list">
                                 <lable for="msg"></lable>
-                                <textarea class="contacts_input contacts_textarea" id="msg" name="user_message" >Message</textarea>
-                            </li>
-                            <li class="contacts_item-list">
+                                <textarea id="msg" name="user_message" placeholder="Message" class="input-style textarea">Message</textarea>
+                            </div>
+                            <div class="contacts_item-list">
                                 <button class="btn-gold" type="submit"><a class="btn-gold-link" href="#"> Send message</a></button>
-                            </li>
-                        </ul>
+                            </div>
+                        </div>
                     </form>
                 </div>    
             </section>

@@ -44,23 +44,24 @@ h1 {
     line-height: 120px;
 }
 
-h2 { 
-    padding-bottom: 60px;
-    overflow: hidden;
+/* ------------------ SECTION TITLE ----------------------*/
+
+.section-title { 
+    margin-bottom: 60px;
     font-size: 40px;
     line-height: 80px;
     color: #BDAE82;
+    overflow: hidden;
 }
 
-.main_header::before,
-.main_header::after {
+.section-title::before,
+.section-title::after {
     content: '';
     margin: 20px;
     display: inline-block;
     text-align: center;
     vertical-align: middle;
     box-sizing: border-box;
-    /*width: 100%;*/
     height: 2px;
     background-color: #BDAE82;
     border: solid #BDAE82;
@@ -222,20 +223,26 @@ a {
 
 /* ------------------ SECTION SKILLS ----------------------*/
 
-.skills_item {
+.skills_items {
+    width: 1400px;
     display: flex;
     justify-content: space-between;
-    width: 1400px;
-    margin-top: 60px;
+    flex-wrap: wrap;
 }
 
-.skills_item-list {
+.skill_item {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 320px;
     height: 240px;
+    background-position: center top;
 }
+
+.skill-item:nth-child(1) {
+    background-image: url('../img/camera 1.svg');
+    background-size: 62px 50px;
+  }
 
 .skills_title {
     font-size: 20px;
@@ -273,10 +280,23 @@ a {
     padding-bottom: 25px;
 }
 
+.portfolio_galery-list:nth-child(4) {
+    padding-bottom: 0;
+}
+
+.portfolio_galery-list:nth-child(5) {
+    padding-bottom: 0;
+}
+
+.portfolio_galery-list:nth-child(6) {
+    padding-bottom: 0;
+}
+
 /* ------------------ SECTION VIDEO ----------------------*/
 
 .video_section {
     position: relative;
+    height: 705px;
 }
 
 .video_icon {
@@ -357,7 +377,7 @@ a {
     margin-right: 20px;
 }
 
-.contacts_header {
+.contacts_title {
     padding-bottom: 40px;
     font-family: 'Merriweather', serif;
     font-size: 40px;
@@ -365,7 +385,7 @@ a {
     color: #BDAE82;
 }
 
-.contacts_input {
+.input-style {
     width: 446px;
     height: 46px;
     margin-bottom: 20px;
@@ -376,9 +396,35 @@ a {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-.contacts_textarea {
+input::-webkit-input-placeholder       {opacity: 1; transition: opacity 0.3s ease;}
+input::-moz-placeholder                {opacity: 1; transition: opacity 0.3s ease;}
+input:-moz-placeholder                 {opacity: 1; transition: opacity 0.3s ease;}
+input:-ms-input-placeholder            {opacity: 1; transition: opacity 0.3s ease;}
+input:focus::-webkit-input-placeholder {opacity: 0; transition: opacity 0.3s ease;}
+input:focus::-moz-placeholder          {opacity: 0; transition: opacity 0.3s ease;}
+input:focus:-moz-placeholder           {opacity: 0; transition: opacity 0.3s ease;}
+input:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s ease;}
+
+input::-webkit-input-placeholder {
+    font-family: inherit;
+    color: #bdae82;
+    font-size: 20px;
+}
+
+.textarea {
     height: 100px;
-    padding-top: 16px;
+    margin-bottom: 20px;
+    padding-top: 12px;
+}
+
+.textarea::-webkit-input-placeholder {
+    font-family: inherit;
+    color: #bdae82;
+    font-size: 20px;
+}
+
+.textarea:focus::-webkit-input-placeholder {
+    opacity: 0;
 }
 
 /* ------------------ FOOTER ----------------------*/
