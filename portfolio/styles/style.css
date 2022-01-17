@@ -167,7 +167,7 @@ a {
 
 .logo {
     height: 50px;
-    background-image: url('./img/logo 1.svg');
+    background-image: url('../img/logo.svg');
     background-size: contain;
     background-repeat: no-repeat;  
     transition: 0.3s;
@@ -308,10 +308,10 @@ a {
     background-size: contain;
     background-repeat: no-repeat;  
     transition: 0.3s;
+    cursor: pointer;
 }
 
 .video_icon:hover {
-    cursor: pointer;
     filter: invert(73%) sepia(34%) saturate(309%) hue-rotate(7deg) brightness(91%) contrast(85%);
 }
 
@@ -458,7 +458,7 @@ input::-webkit-input-placeholder {
 
 .social_inst-link {
     height: 32px;
-    background-image: url('../img/inst 1.svg');
+    background-image: url('../img/inst.svg');
     background-size: contain;
     background-repeat: no-repeat;  
     transition: 0.3s;
@@ -466,7 +466,7 @@ input::-webkit-input-placeholder {
 
 .social_fb-link {
     height: 32px;
-    background-image: url('../img/fb 1.svg');
+    background-image: url('../img/fb.svg');
     background-size: contain;
     background-repeat: no-repeat;  
     transition: 0.3s; 
@@ -474,7 +474,7 @@ input::-webkit-input-placeholder {
 
 .social_tw-link {
     height: 32px;
-    background-image: url('../img/tw 1.svg');
+    background-image: url('../img/tw.svg');
     background-size: contain;
     background-repeat: no-repeat;  
     transition: 0.3s;
@@ -482,7 +482,7 @@ input::-webkit-input-placeholder {
 
 .social_pint-link {
     height: 32px;
-    background-image: url('../img/pinterest 1.svg');
+    background-image: url('../img/pinterest.svg');
     background-size: contain;
     background-repeat: no-repeat;  
     transition: 0.3s;
