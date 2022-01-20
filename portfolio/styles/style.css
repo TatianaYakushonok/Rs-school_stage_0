@@ -266,6 +266,7 @@ a {
 
 .portfolio_item {
     display: flex;
+    flex-wrap: wrap;
     margin: 0 0 60px;
 }
 
@@ -494,3 +495,119 @@ input::-webkit-input-placeholder {
 .social_pint-link:hover {
     filter: invert(73%) sepia(34%) saturate(309%) hue-rotate(7deg) brightness(91%) contrast(85%);
 }
+
+@media (max-width: 768px) {
+    h1 {
+        padding-bottom: 20px;
+        font-size: 32px;
+        font-weight: 400;
+        line-height: 64px;
+    }
+
+    .conteiner {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .section {
+        padding: 80px 0 0;
+        line-height: 25px;
+    }
+
+    .section-title { 
+        margin-bottom: 36px;
+        font-size: 32px;
+        line-height: 40px;
+        color: #BDAE82;
+        overflow: hidden;
+    }
+
+    .section-title::before,
+    .section-title::after {
+        content: '';
+        margin: 20px;
+        display: inline-block;
+        text-align: center;
+        vertical-align: middle;
+        box-sizing: border-box;
+        height: 2px;
+        background-color: #BDAE82;
+        border: solid #BDAE82;
+        border-width: 0 45px;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    .btn-gold {
+        width: 219px;
+        height: 54px;
+    }
+
+    .btn-transporant {
+        width: 219px;
+        height: 54px;
+    }
+
+    .header-conteiner {
+        padding: 20px 60px;
+        background: url('../img/bg-resp.jpg');
+        background-repeat: no-repeat;
+        background-position: center 0;
+    }
+
+    .hero-container {
+        background-image: url('../img/bg-resp.jpg');
+        background-position: center -90px;
+        background-repeat: no-repeat;
+      }
+
+    .hero {
+        width: 390px;
+        height: 198px;
+        padding: 78px 60px 152px;
+    }
+
+    .hero_text {
+        padding-bottom: 60px;
+        line-height: auto;
+    }
+
+    .skills_items {
+        width: 728px;
+    }
+
+    .skills_title {
+        padding: 30px 0 20px;
+    }
+
+    .portfolio_item {
+        width: 455px;
+    }
+
+    .btn-transporant:nth-child(1),
+    .btn-transporant:nth-child(2) {
+        margin-bottom: 5px;
+    }
+
+    .portfolio_galery {
+        width: 768px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        flex-flow: row wrap;
+    }
+
+    .portfolio_galery-list:nth-child(4) {
+        padding-bottom: 25px;
+    }
+    
+    .portfolio_galery-list:nth-child(5) {
+        padding-bottom: 25px;
+    }
+    
+    .portfolio_galery-list:nth-child(6) {
+        padding-bottom: 25px;
+    }
+  }
