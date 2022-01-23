@@ -305,6 +305,12 @@ a {
     height: 705px;
 }
 
+.video_section {
+    height: 418px;
+    background-image: url("../img/video-player.jpg");
+    background-repeat: no-repeat;
+}
+
 .video_icon {
     background-image: url('../img/Play_hover.svg');
     background-size: contain;
@@ -609,9 +615,19 @@ input::-webkit-input-placeholder {
         padding-bottom: 25px;
     }
 
+    .video_section {
+        background-image: url("../img/video-resp.jpg");
+        background-repeat: no-repeat;
+    }
+
     .video-section > img {
         width: 768px;
         height: 418px;
+    }
+
+    .icon_play {
+        width: 75px;
+        height: 75px;
     }
 
     .price_item {
@@ -635,12 +651,16 @@ input::-webkit-input-placeholder {
 
     .contacts {
         height: 600px;
+        padding-top: 0;
         display: flex;
         align-items: center;
+        background-image: url("../img/contacts-resp.jpg");
+        background-repeat: no-repeat;
     }
 
     .contacts_container {
         display: flex;
+        padding-top: 60px;
         flex-direction: column;
         align-items: center;
         margin-top: 0;
