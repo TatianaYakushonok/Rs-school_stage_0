@@ -528,9 +528,10 @@ input::-webkit-input-placeholder {
     }
 
     .section-title { 
-        margin-bottom: 50px;
+        height: 80px;
+        margin-bottom: 45px;
         font-size: 32px;
-        line-height: 40px;
+        line-height: 80px;
         color: #BDAE82;
         overflow: hidden;
     }
@@ -683,17 +684,21 @@ input::-webkit-input-placeholder {
 
     .hero {
         width: 390px;
-        height: 198px;
+        height: 268px;
         padding: 78px 60px 152px;
     }
 
     .hero_text {
         padding-bottom: 60px;
-        line-height: auto;
+        line-height: 24px;
     }
 
     .skills_items {
-        width: 728px;
+        width: 670px;
+    }
+
+    .skill_item {
+        margin-bottom: 25px;
     }
 
     .skills_title {
@@ -752,6 +757,7 @@ input::-webkit-input-placeholder {
     }
 
     .price_item-list {
+        width: 420px;
         margin-bottom: 50px;
     }
 
@@ -777,6 +783,11 @@ input::-webkit-input-placeholder {
         margin-right: 0;
     }
 
+    .contacts_title {
+        font-size: 32px;
+        line-height: 64px;
+    }
+
     .contacts_form {
         display: flex;
         flex-direction: column;
@@ -796,7 +807,7 @@ input::-webkit-input-placeholder {
     }
   }
 
-  @media (max-width: 420px) {
+  @media (max-width: 480px) {
     .skills_items {
         width: 420px;
         display: flex;
@@ -838,7 +849,12 @@ input::-webkit-input-placeholder {
       }
 
     .hero {
+        width: 420px;
         padding: 78px 30px 152px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
   }
 
