@@ -179,6 +179,10 @@ a {
 
 /* ------------------ nav ----------------------*/
 
+.burger-menu {
+    display: none;
+}
+
 .nav_conteiner {
     display: flex;
     font-size: 20px;
@@ -266,6 +270,7 @@ a {
 
 .portfolio_item {
     display: flex;
+    flex-wrap: wrap;
     margin: 0 0 60px;
 }
 
@@ -299,8 +304,15 @@ a {
 /* ------------------ SECTION VIDEO ----------------------*/
 
 .video_section {
+    width: 100%;
     position: relative;
     height: 705px;
+}
+
+.video_section {
+    height: 418px;
+    background-image: url("../img/video-player.jpg");
+    background-repeat: no-repeat;
 }
 
 .video_icon {
@@ -329,7 +341,8 @@ a {
 .price_item {
     width: 1400px;
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between;
+    flex-wrap: wrap; 
 }
 
 .price_item-list {
@@ -494,3 +507,474 @@ input::-webkit-input-placeholder {
 .social_pint-link:hover {
     filter: invert(73%) sepia(34%) saturate(309%) hue-rotate(7deg) brightness(91%) contrast(85%);
 }
+
+@media (max-width: 768px) {
+    h1 {
+        padding-bottom: 20px;
+        font-size: 32px;
+        font-weight: 400;
+        line-height: 64px;
+    }
+
+    .conteiner {
+        max-width: 100%;
+        margin: 0 auto;
+        overflow-x: hidden;
+    }
+
+    .section {
+        padding: 80px 0 0;
+        line-height: 25px;
+    }
+
+    .section-title { 
+        height: 80px;
+        margin-bottom: 45px;
+        font-size: 32px;
+        line-height: 80px;
+        color: #BDAE82;
+        overflow: hidden;
+    }
+
+    .section-title::before,
+    .section-title::after {
+        content: '';
+        margin: 20px;
+        display: inline-block;
+        text-align: center;
+        vertical-align: middle;
+        box-sizing: border-box;
+        height: 2px;
+        background-color: #BDAE82;
+        border: solid #BDAE82;
+        border-width: 0 45px;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    .btn-gold {
+        width: 219px;
+        height: 54px;
+    }
+
+    .btn-transporant {
+        width: 219px;
+        height: 54px;
+    }
+
+    .header-conteiner {
+        padding: 20px 60px;
+        background: url('../img/bg-resp.jpg');
+        background-repeat: no-repeat;
+        background-position: center 0;
+    }
+
+    /* ------------------ gamburger menu ----------------------*/
+
+    body {
+        overflow-x: hidden;
+    }
+    
+    .langage {
+        margin-right: 50px;
+    }
+
+    .burger-menu {
+        display: block;
+    }
+    
+    #menutoggle{
+        opacity: 0;
+    }
+
+    .menu-btn{
+        display: flex;
+        align-items: center;
+        position: absolute;
+        top: 20px;
+        right: 60px;
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+        z-index: 1;
+    }
+       
+    .menu-btn > span,
+    .menu-btn > span::before,
+    .menu-btn > span::after {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: #ffffff;
+        transition-duration: .25s;
+
+    }
+
+    .menu-btn > span::before {
+        content: '';
+        top: -14px;
+    }
+
+    .menu-btn > span::after {
+        content: '';
+        top: 14px;
+    }
+
+    .menubox{
+        display: block;
+        position: fixed;
+        visibility: hidden;
+        top: 0;
+        right: -100%;
+        width: 493px;
+        height: 100%;
+        margin: 0;
+        padding: 134px 0 0 127px;
+        list-style: none;
+        background-color: #000000;
+        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
+        transition-duration: .25s;
+      }
+
+    .menu-item {
+        display: block;
+        padding-bottom: 16px;;
+        color: #ffffff;
+        font-family: 'Inter', sans-serif;
+        font-size: 34px;
+        font-weight: 300;
+        line-height: 72px;
+        text-decoration: none;
+        transition-duration: .25s;
+      }
+
+    .menu-item:hover {
+        color: #bdae82;
+    }
+
+    #menutoggle:checked ~ .menu-btn > span{
+        transform: rotate(45deg);
+    }
+
+    #menutoggle:checked ~ .menu-btn > span::before{
+        top: 0;
+        transform: rotate(0);
+    }
+
+    #menutoggle:checked ~ .menu-btn > span::after{
+        top: 0;
+        transform: rotate(90deg);
+    }
+
+    #menutoggle:checked ~ .menubox{
+        visibility: visible;
+        right: 0;
+    }
+
+      /* ------------------tne end gamburger menu ----------------------*/
+
+    .hero-container {
+        background-image: url('../img/bg-resp.jpg');
+        background-position: center -90px;
+        background-repeat: no-repeat;
+      }
+
+    .hero {
+        width: 390px;
+        height: 268px;
+        padding: 78px 60px 152px;
+    }
+
+    .hero_text {
+        padding-bottom: 60px;
+        line-height: 24px;
+    }
+
+    .skills_items {
+        width: 670px;
+    }
+
+    .skill_item {
+        margin-bottom: 25px;
+    }
+
+    .skills_title {
+        padding: 30px 0 20px;
+    }
+
+    .portfolio_item {
+        width: 455px;
+    }
+
+    .btn-transporant:nth-child(1),
+    .btn-transporant:nth-child(2) {
+        margin-bottom: 5px;
+    }
+
+    .portfolio_galery {
+        width: 768px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        flex-flow: row wrap;
+    }
+
+    .portfolio_galery-list:nth-child(4) {
+        padding-bottom: 25px;
+    }
+    
+    .portfolio_galery-list:nth-child(5) {
+        padding-bottom: 25px;
+    }
+
+    .video_section {
+        background-image: url("../img/video-resp.jpg");
+        background-repeat: no-repeat;
+    }
+
+    .video-section > img {
+        width: 768px;
+        height: 418px;
+    }
+
+    .icon_play {
+        width: 75px;
+        height: 75px;
+    }
+
+    .price_item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /*flex-wrap: wrap;*/
+    }
+
+    .items {
+        line-height: 36px;    
+    }
+
+    .price_item-list {
+        width: 420px;
+        margin-bottom: 50px;
+    }
+
+    .price_item-list:last-child {
+        margin-bottom: 0;
+    }
+
+    .contacts {
+        height: 600px;
+        padding-top: 0;
+        display: flex;
+        align-items: center;
+        background-image: url("../img/contacts-resp.jpg");
+        background-repeat: no-repeat;
+    }
+
+    .contacts_container {
+        display: flex;
+        padding-top: 60px;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 0;
+        margin-right: 0;
+    }
+
+    .contacts_title {
+        font-size: 32px;
+        line-height: 64px;
+    }
+
+    .contacts_form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-conteiner {
+        padding: 28px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        line-height: 36px;
+    }
+
+    .footer_school-link {
+        padding-bottom: 20px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .skills_items {
+        width: 420px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .section {
+        padding: 60px 0 0;
+    }
+
+    .contacts {
+        height: 600px;
+        padding-top: 0;
+    }
+
+    .header-conteiner {
+        padding: 20px 30px;
+    }
+
+    .menu-btn{
+        right: 30px;
+    }
+
+    .menubox{
+        display: block;
+        position: fixed;
+        visibility: hidden;
+        top: 0;
+        right: -100%;
+        width: 352px;
+        height: 100%;
+        margin: 0;
+        padding: 100px 0 0 127px;
+        list-style: none;
+        background-color: #000000;
+        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
+        transition-duration: .25s;
+      }
+
+    .hero {
+        width: 420px;
+        padding: 78px 30px 152px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+  }
+
+  @media (max-width: 320px) {
+
+    .logo {
+        width: 36px;
+        height: 36px;
+    }
+
+    .logo_picture {
+        width: 36px;
+        height: 36px;
+    }
+
+    .menu-btn{
+        /*display: flex;
+        align-items: center;
+        position: absolute;*/
+        top: 30px;
+        right: 20px;
+        width: 36px;
+        height: 36px;
+        /*cursor: pointer;
+        z-index: 1;*/
+    }
+
+    .menu-btn > span::before {
+        content: '';
+        top: -12px;
+    }
+
+    .menu-btn > span::after {
+        content: '';
+        top: 12px;
+    }
+
+    .menubox {
+        width: 250px;
+    }
+
+    .menu-item {
+        display: block;
+        padding-bottom: 16px;;
+        color: #ffffff;
+        font-family: 'Inter', sans-serif;
+        font-size: 32px;
+        font-weight: 300;
+        line-height: 50px;
+        text-decoration: none;
+        transition-duration: .25s;
+      }
+
+    .hero {
+        width: 290px;
+        height: 310px;
+        padding: 50px 15px 110px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero_text {
+        padding-bottom: 30px;
+        line-height: 28px;
+    }
+
+    .section-title::before,
+    .section-title::after {
+        content: '';
+        margin: 20px;
+        display: inline-block;
+        text-align: center;
+        vertical-align: middle;
+        box-sizing: border-box;
+        height: 2px;
+        background-color: #BDAE82;
+        border: solid #BDAE82;
+        border-width: 0 20px;
+    }
+
+    .portfolio_item {
+        width: 320px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn-transporant:nth-child(3) {
+        margin-bottom: 5px;
+    }
+
+    .price_item {
+        width: 320px;
+    }
+
+    .price_item-list {
+        width: 300px;
+        margin-bottom: 20px;
+    }
+
+    .contacts {
+        height: 480px;
+    }
+
+    .contacts_container {
+        width: 320px;
+        padding-top: 30px;
+    }
+
+    .contacts_title {
+        padding-bottom: 20px;
+    }
+
+    .contacts_form {
+        width: 300px;
+    }
+
+    .input-style {
+        width: 300px;
+    }
+  }
