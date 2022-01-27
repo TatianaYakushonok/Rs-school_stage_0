@@ -131,22 +131,16 @@ a {
     width: 220px;
     height: 55px;
     margin-left: 5px;
+    color: #BDAE82;
+    font-size: 20px;
+    line-height: 40px;
     border: 2px solid #BDAE82;
     background-color: transparent;
 }
 
-.btn-transporant-link {
-    color: #BDAE82;
-    font-size: 20px;
-    line-height: 40px;
-}
-
 .btn-activ {
-    background-color: #BDAE82;
-}
-
-.btn-activ-link {
     color: #000000;
+    background-color: #BDAE82;
 }
 
 /* ------------------ HEADER ----------------------*/
