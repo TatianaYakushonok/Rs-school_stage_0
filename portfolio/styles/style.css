@@ -284,7 +284,7 @@ a {
     max-width: 1400px;
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
+    /*flex-wrap: wrap;*/
 }
 
 .skill_item {
@@ -751,6 +751,9 @@ input::-webkit-input-placeholder {
 
     .skills_items {
         width: 670px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
     }
 
     .skill_item {
