@@ -6,7 +6,8 @@ console.log("1. Смена изображений в секции portfolio +25"
 
 // Сохранение данных
 
-let theme = 'dark';
+//let theme = 'dark';
+let langs = 'en';
 
 // Смена изображений в секции Portfolio
 
@@ -85,7 +86,10 @@ const i18Obj = {
       'price-description-3-span-5': 'Make up, visage, hairstyle',
       'order': 'Order shooting',
       'contact-me': 'Contact me',
-      'send-message': 'Send message'
+      'send-message': 'Send message',
+      'e-mail': 'E-mail',
+      'phone': 'Phone',
+      'message': 'Message'
     },
     'ru': {
       'skills': 'Навыки',
@@ -125,81 +129,89 @@ const i18Obj = {
       'price-description-3-span-5': 'Макияж, визаж, прическа',
       'order': 'Заказать съемку',
       'contact-me': 'Свяжитесь со мной',
-      'send-message': 'Отправить'
+      'send-message': 'Отправить',
+      'e-mail': 'Эл. почта',
+      'phone': 'Телефон',
+      'message': 'Сообщение'
     }
   }
 
-//const langs = document.querySelectorAll('.langage');
-const elem = document.querySelectorAll('[data-i18n]');
-const en = document.querySelector('.en');
-const ru = document.querySelector('.ru');
+const lgEn = document.querySelector('.en');
+const lgRu = document.querySelector('.ru');
 
 function getTranslate(langs) {
-    //const elem = document.querySelectorAll('[data-i18n]');
-    elem.forEach((item) => {
-        /*if (item.placeholder) {
-            item.placeholder = i18Obj[langs][item.dataset.i18n];
-            item.textContent = ''; 
-        }*/
-        item.textContent = i18Obj[langs][item.dataset.i18n];
-        /*langs.forEach((item) => item.classList('active'));
-        event.target.classList.add('active');*/
-    })
+    const elem = document.querySelectorAll('[data-i18n]');
+        elem.forEach((item) => {
+            if (item.placeholder) {
+                item.placeholder = i18Obj[langs][item.dataset.i18n];
+                item.textContent = ''; 
+            }
+            item.textContent = i18Obj[langs][item.dataset.i18n];
+        })
+
+        if (event.target.classList.contains('en')) {
+            lgRu.classList.remove('langage_link-activ');
+            lgEn.classList.add('langage_link-activ');
+        } else if (event.target.classList.contains('ru')) {
+            lgRu.classList.add('langage_link-activ');
+            lgEn.classList.remove('langage_link-activ');
+        }
 }
 
-console.log(elem);
-ru.addEventListener('click', getTranslate('ru'));
-en.addEventListener('click', getTranslate('en'));
-
-//langs.addEventListener('click', getTranslate);
-
-//ru.forEach((item) => item.addEventListener('click', getTranslate('ru')));
-//en.forEach((item) => item.addEventListener('click', getTranslate('en')));
-
-/*function getTranslate(event) {
-    const elem = document.querySelectorAll('[data-i18]');
-    const text = document.textContent;
-
-    if(event.target.classList.contains('langage_link')){
-        elem.forEach((item) => item.textContent = i18Obj[event.target.textContent][item.dataset.i18]);
-    }
-}
-
-langs.forEach((item) => item.addEventListener('click', getTranslate));*/
-/*ru.addEventListener('click', () => getTranslate('ru'));
-en.addEventListener('click', () => getTranslate('en'));*/
+lgRu.addEventListener('click', () => getTranslate('ru'));
+lgEn.addEventListener('click', () => getTranslate('en'));
 
 
 // Переключение светлой и тёмной темы
 
-const liteTheme = document.querySelectorAll('.skills, .portfolio, .video, .price, .menubox, .menu-item');
+//const liteTheme = document.querySelectorAll('.skills, .portfolio, .video, .price, .menubox, .menu-item');
+const liteTheme = document.querySelectorAll('body, .menubox, .menu-item, body.test:not(footer), body.test:not(.header-conteiner), body.test:not(.hero-container)');
 const btnTheme = document.querySelector('.them');
 const btnPortfolio = document.querySelectorAll('.btn-transporant');
 const sectionTitle = document.querySelectorAll('.section-title');
 const menuBtn = document.querySelectorAll('.menu-btn');
 
 function changeTheme(event) {
-    if(event.target.classList.contains('them')) {
+    //if(event.target.classList.contains('them')) {
         liteTheme.forEach((el) => el.classList.toggle('light-theme'));
         btnTheme.classList.toggle('them-active');
         btnPortfolio.forEach((elem) => elem.classList.toggle('btn-transporant-light'));
         sectionTitle.forEach((e) => e.classList.toggle('section-title-light'));
         menuBtn.forEach((btn) => btn.classList.toggle('menu-btn-light'));
-    }
-    theme = 'light';
+    //}
 }
 
 btnTheme.addEventListener('click', changeTheme, false);
 
+// Запись данных в localStorage
+
 function setLocalStorage() {
+    if(btnTheme.classList.contains('them-active')) {
+        theme = 'light';
+    } else {
+        theme = 'dark'};
     localStorage.setItem('theme', theme);
+
+    /*if(lgEn.classList.contains('langage_link-activ')) {
+        langs = 'en';
+    } else {
+        langs = 'ru';
+    }*/
+    //localStorage.setItem('langs', event.target.dataset.i18n);
 }
 window.addEventListener('beforeunload', setLocalStorage);
 
+// Получение данных из localStorage
+
 function getLocalStorage() {
-    if(localStorage.getItem('theme')) {
-      const theme = localStorage.getItem('theme');
-      //changeTheme(event);
-    }
+    if(localStorage.getItem('theme') == 'light') {
+        const theme = localStorage.getItem('theme');
+        changeTheme();
+    };
+    /*if(localStorage.getItem('langs')) {
+        const langs = localStorage.getItem('langs');
+        getTranslate(langs);
+    };*/
+
   }
 window.addEventListener('load', getLocalStorage);
