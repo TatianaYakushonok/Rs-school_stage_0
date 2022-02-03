@@ -171,7 +171,21 @@ a {
 
 .btn-transporant-light:hover {
     color: #000;
+    border: 2px dashed #000;
+    transition: border .3s;
 }
+
+/*.btn-transporant-light::after {
+    content: '';
+    display: block;
+    border: 0;
+    transition: border .3s;
+}
+
+.btn-transporant-light:hover::after {
+    border: 2px dashed #000;
+    transition: border .3s;
+}*/
 
 /* ------------------ HEADER ----------------------*/
 
@@ -182,6 +196,7 @@ a {
     padding: 20px;
     font-size: 20px;
     line-height: 50px;
+    color: #fff;
     background: url('../img/bg.jpg');
     background-repeat: no-repeat;
     background-position: center 0;
@@ -261,6 +276,7 @@ a {
 /* ------------------ SECTION HERO ----------------------*/
 
 .hero-container {
+    color: #fff;
     background-image: url('../img/bg.jpg');
     background-position: center -90px;
     background-repeat: no-repeat;
@@ -496,6 +512,13 @@ input::-webkit-input-placeholder {
 
 /* ------------------ FOOTER ----------------------*/
 
+footer {
+    max-width: 1440px;
+    margin: 0 auto;
+    color: #fff;
+    background-color: #000;
+}
+
 .footer-conteiner {
     padding: 50px 30px;
     display: flex;
@@ -557,6 +580,50 @@ input::-webkit-input-placeholder {
 .social_pint-link:hover {
     filter: invert(6%) sepia(12%) saturate(1156%) hue-rotate(338deg) brightness(80%) contrast(80%);
 
+}
+
+
+@media (max-width: 1366px) {
+    .conteiner {
+        max-width: 100%;
+        margin: 0 auto;
+        overflow-x: hidden;
+    }
+
+    /*---------------SECTION PORTFOLIO----------------*/
+
+    .portfolio_galery {
+        width: 1320px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .portfolio_galery-list {
+        width: 430px;
+        height: 535px;
+        padding-bottom: 15px;
+    }
+
+    .portfolio_galery-list > img {
+        width: 430px;
+    }
+
+    /*---------------SECTION VIDEO----------------*/
+
+    .video_section {
+        width: 1320px;
+    }
+
+    /*---------------SECTION PRICE----------------*/
+
+    .price_item {
+        width: 1320px;
+    }
+
+    .price_item-list {
+        width: 425px;
+    }
 }
 
 
@@ -853,6 +920,10 @@ input::-webkit-input-placeholder {
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+
+    footer {
+        width: 100%;
     }
 
     .footer-conteiner {
