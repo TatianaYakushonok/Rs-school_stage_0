@@ -215,3 +215,67 @@ function getLocalStorage() {
 
   }
 window.addEventListener('load', getLocalStorage);
+
+// js30#1.3-custom-video
+
+const video = document.querySelector('.video-file');
+const videoRange = document.querySelector('.video-range');
+const volumeRange = document.querySelector('.volume-range');
+const videoBtn = document.querySelector('.play-pause');
+const volumeBtn = document.querySelector('.volume-play-pause');
+
+const min = volumeRange.min;
+const max = volumeRange.max;
+const value = volumeRange.value;
+
+function togglePlayPause() {
+    if(video.paused) {
+        videoBtn.className = 'pause';
+        video.play();
+    }
+    else {
+        videoBtn.className = 'play';
+        video.pause(); 
+    }
+}
+
+videoBtn.onclick = function () {
+    togglePlayPause();
+}
+
+video.addEventListener('timeupdate', function() {
+    const rangePos = video.currentTime / video.duration;
+    videoRange.style.width = rangePos * 100 + '%';
+    if(video.ended) {
+        videoBtn.className = 'play'; 
+        videoRange.style.width = 0;
+    }
+})
+
+function ToggleVolumePlayPause() {
+    if(video.muted) {
+        volumeBtn.className = 'volume';
+        video.muted = false;
+        volumeRange.value = 1;
+        volumeRange.style.background = 'linear-gradient(to right, #bdae82 0%, #bdae82 100%, #B3B3B3 0%, #B3B3B3 100%)';
+    }
+    else {
+        volumeBtn.className = 'mute';
+        video.muted = true;
+        //volumeRange.style.width = 0;
+        volumeRange.value = 0;
+        volumeRange.style.background = 'linear-gradient(to left, #bdae82 0%, #bdae82 0%, #B3B3B3 0%, #B3B3B3 100%)';
+    }
+}
+
+volumeBtn.addEventListener('click', ToggleVolumePlayPause);
+
+volumeRange.addEventListener('input', function () {
+    const min = volumeRange.min;
+    const max = volumeRange.max;
+    const value = volumeRange.value;
+
+    video.volume = volumeRange.value;
+    volumeRange.style.background = 'linear-gradient(to right, #bdae82 0%, #bdae82 ' + (value-min)/(max-min)*100 + '%, #B3B3B3 ' + (value-min)/(max-min)*100 + '%, #B3B3B3 100%)';
+}, false);
+

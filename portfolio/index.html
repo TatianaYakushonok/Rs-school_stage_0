@@ -119,6 +119,22 @@
             <section class="section video" id="video">
                 <h2 class="section-title" data-i18n='video'>Video</h2>
                 <div class="video_section">
+                    <video class="video-file" src="./video/video.mp4" poster="./img/video-player.jpg"></video>
+                    <div class="controls">
+                        <div class="video-bar">
+                            <div class="video-range"></div>
+                        </div>
+                        <div class="video-button">
+                            <button class="play-pause"></button>
+                        </div>
+                        <div class="volume-button">
+                            <button class="volume-play-pause"></button>
+                        </div>
+                        <!--<div class="volume-bar">-->
+                            <!--<div class="volume-range"></div>-->
+                            <input type="range" step="0.1" min="0" max="1" value="0.5" class="volume-range"/>
+                        <!--</div>-->
+                    </div>
                     <button class="video_icon" type="button"><img class="icon_play" src="./img/Play_hover.svg" alt="icon_play"></button>
                 </div>    
             </section>
