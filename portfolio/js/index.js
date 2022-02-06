@@ -223,6 +223,7 @@ const videoRange = document.querySelector('.video-range');
 const volumeRange = document.querySelector('.volume-range');
 const videoBtn = document.querySelector('.play-pause');
 const volumeBtn = document.querySelector('.volume-play-pause');
+const playBtn = document.querySelector('.icon_play');
 
 const min = volumeRange.min;
 const max = volumeRange.max;
@@ -232,16 +233,18 @@ function togglePlayPause() {
     if(video.paused) {
         videoBtn.className = 'pause';
         video.play();
+        playBtn.classList.add('icon_play-hidden');
     }
     else {
         videoBtn.className = 'play';
-        video.pause(); 
+        video.pause();
+        playBtn.classList.remove('icon_play-hidden');
     }
 }
 
-videoBtn.onclick = function () {
-    togglePlayPause();
-}
+videoBtn.addEventListener('click', togglePlayPause);
+video.addEventListener('click', togglePlayPause);
+playBtn.addEventListener('click', togglePlayPause);
 
 video.addEventListener('timeupdate', function() {
     const rangePos = video.currentTime / video.duration;
@@ -249,6 +252,7 @@ video.addEventListener('timeupdate', function() {
     if(video.ended) {
         videoBtn.className = 'play'; 
         videoRange.style.width = 0;
+        playBtn.classList.remove('icon_play-hidden');
     }
 })
 
@@ -277,5 +281,26 @@ volumeRange.addEventListener('input', function () {
 
     video.volume = volumeRange.value;
     volumeRange.style.background = 'linear-gradient(to right, #bdae82 0%, #bdae82 ' + (value-min)/(max-min)*100 + '%, #B3B3B3 ' + (value-min)/(max-min)*100 + '%, #B3B3B3 100%)';
+
+    if(volumeRange.value == 0) {
+        volumeBtn.className = 'mute';
+    }
+    else {
+        volumeBtn.className = 'volume'; 
+    }
 }, false);
+
+/*videoRange.addEventListener('mouseover', function(){drag = true});
+videoRange.addEventListener('mouseout', function(){drag = false; grap = false});
+videoRange.addEventListener('mousedown', function(){grap = drag});
+videoRange.addEventListener('mouseup', function(){grap = false});
+videoRange.addEventListener('click', updateCurrentPos);
+videoRange.addEventListener('mousemove', function(e){ if(drag && grap){updateCurrentPos(e)}});
+
+function updateCurrentPos(e){
+    // offset of the progress bar / video wrapper width
+    var newProgress = (e.clientX - vidWrapper.offsetLeft) / vidWrapper.clientWidth;
+    videoRange.style.widtch = Math.floor(newProgress * 1000) / 10 + '%';
+    video.currentTime = newProgress * video.duration;
+  }*/
 
