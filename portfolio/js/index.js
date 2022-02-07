@@ -1,8 +1,14 @@
-console.log("1. Смена изображений в секции portfolio +25" + '\n' +
-            "2. Перевод страницы на два языка -25." + '\n' + 
-            "3. Переключение светлой и тёмной темы +25" + '\n' +
-            "3. выбранный пользователем язык отображения страницы и светлая или тёмная тема сохраняются при перезагрузке страницы -5" + '\n' +
-            "4. сложные эффекты для кнопок при наведении и/или клике +5");
+console.log("1. Вёрстка видеоплеера: есть само видео, в панели управления есть кнопка Play/Pause, прогресс-бар, кнопка Volume/Mute, регулятор громкости звука +5." + '\n' +
+            "2. Перевод страницы на два языв футере приложения есть ссылка на гитхаб автора приложения, год создания приложения, логотип курса со ссылкой на курс +5." + '\n' + 
+            "3. При клике по кнопке Play/Pause запускается или останавливается проигрывание видео +5." + '\n' +
+            "4. Внешний вид и функционал кнопки изменяется в зависимости от того, проигрывается ли видео в данный момент +5" + '\n' +
+            "5. Прогресс-бар отображает прогресс проигрывания видео +5." + '\n' +
+            "6. При перемещении ползунка прогресс-бара вручную меняется текущее время проигрывания видео -5." +'\n' +
+            "7. При перемещении ползунка регулятора громкости звука можно сделать звук громче или тише. Разный цвет регулятора громкости звука до и после ползунка +10." + '\n' +
+            "8. При клике по кнопке Volume/Mute можно включить или отключить звук. Одновременно с включением/выключением звука меняется внешний вид кнопки. Также внешний вид кнопки меняется, если звук включают или выключают перетягиванием регулятора громкости звука от нуля или до нуля +10." +'\n' +
+            "9. Eсть кнопка Play/Pause в центре видео при клике по которой запускается видео и отображается панель управления +5." +'\n' +
+            "10. когда видео проигрывается, кнопка Play/Pause в центре видео скрывается, когда видео останавливается, кнопка снова отображается +5." +'\n' +
+             "Общее количество баллов - +60");
 
 // Сохранение данных
 
@@ -218,8 +224,11 @@ window.addEventListener('load', getLocalStorage);
 
 // js30#1.3-custom-video
 
+const vidWrapper = document.querySelector('div.video_section');
 const video = document.querySelector('.video-file');
+const videoBar = document.querySelector('video-bar');
 const videoRange = document.querySelector('.video-range');
+const playRange = document.querySelector('.play-range');
 const volumeRange = document.querySelector('.volume-range');
 const videoBtn = document.querySelector('.play-pause');
 const volumeBtn = document.querySelector('.volume-play-pause');
@@ -228,6 +237,9 @@ const playBtn = document.querySelector('.icon_play');
 const min = volumeRange.min;
 const max = volumeRange.max;
 const value = volumeRange.value;
+
+//let drag;
+//let grap;
 
 function togglePlayPause() {
     if(video.paused) {
@@ -246,15 +258,54 @@ videoBtn.addEventListener('click', togglePlayPause);
 video.addEventListener('click', togglePlayPause);
 playBtn.addEventListener('click', togglePlayPause);
 
-video.addEventListener('timeupdate', function() {
+video.addEventListener('timeupdate', function(e) {
+    //const min = playRange.min;
+    //const max = playRange.max;
+    //const value = playRange.value;
+
     const rangePos = video.currentTime / video.duration;
     videoRange.style.width = rangePos * 100 + '%';
+
     if(video.ended) {
         videoBtn.className = 'play'; 
         videoRange.style.width = 0;
         playBtn.classList.remove('icon_play-hidden');
     }
 })
+
+/*videoBar.addEventListener('mouseover', function(){drag = true});
+videoBar.addEventListener('mouseout', function(){drag = false; grap = false});
+videoBar.addEventListener('mousedown', function(){grap = drag});
+videoBar.addEventListener('mouseup', function(){grap = false});
+videoBar.addEventListener('click', updateCurrentPos);
+videoBar.addEventListener('mousemove', function(e){ if(drag && grap){updateCurrentPos(e)}});
+
+function updateCurrentPos(e){
+    // offset of the progress bar / video wrapper width
+    let newProgress = (e.clientX - vidWrapper.offsetLeft) / vidWrapper.clientWidth;
+    videoRange.style.flexBasis = Math.floor(newProgress * 1000) / 10 + '%';
+    video.currentTime = newProgress * video.duration;
+}*/
+
+/*function videoChangeTime(e) { //Перематываем
+    //var mouseX = Math.floor(e.pageX - videoRange.offsetLeft);
+    //var progress = mouseX / (videoRange.offsetWidth / 100);
+    //video.currentTime = video.duration * (progress / 100);
+    let posX = e.clientX + 8; // Вычисляем позицию нажатия
+    let timePos = (posX * 100) / 1320; // Вычисляем процент перемотки
+    videoRange.style.width = timePos + '%'; // Присваиваем процент перемотки
+    video.currentTime = (timePos * Math.round(video.duration)) / 100;
+}
+
+videoRange.addEventListener('click', videoChangeTime);
+
+function playChangeTime(e) { //Перематываем
+    const mouseX = Math.floor(e.pageX - playRange.offsetLeft);
+    let progress = mouseX / (playRange.offsetWidth / 100);
+    video.currentTime = video.duration * (progress / 100);
+}
+
+playRange.addEventListener('click', playChangeTime);*/
 
 function ToggleVolumePlayPause() {
     if(video.muted) {
