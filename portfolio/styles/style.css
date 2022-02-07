@@ -393,7 +393,9 @@ a {
 
 .video-button,
 .volume-button {
-    padding: 10px 30px;
+    padding: 15px 10px 15px 20px;
+    width: 30px;
+    height: 30px;
 }
 
 .video-button button,
@@ -427,22 +429,38 @@ a {
     background-position: center;
 }
 
+.video-button button:hover::before,
+.video-button button.play:hover::before,
+.video-button button.pause:hover::before,
+.volume-button button:hover::before,
+.volume-button button.volume:hover::before,
+.volume-button button.mute:hover::before {
+    filter: invert(6%) sepia(12%) saturate(1156%) hue-rotate(338deg) brightness(80%) contrast(80%);
+}
+
 .video-bar {
+    /*flex:10;
+    position: relative;
+    display:flex;
+    flex-basis:100%;*/
     height: 10px;
     top: 0;
     left: 0;
     width: 100%;
     background-color: #B3B3B3;
+    cursor:ew-resize;
 }
 
 .video-range {
     width: 0;
     height: 10px;
     background-color: #bdae82;
+    /*flex:0;
+    flex-basis:50%;*/
 }
 
 .volume-button {
-    padding: 10px 20px 10px 0;
+    padding: 12px 20px 15px 20px;
 }
 
 .video-button button,
@@ -474,17 +492,8 @@ a {
     background-position: center;
 }
 
-/*.volume-bar {
-    height: 8px;
-    margin-top: 24px;
-    width: 150px;
-    cursor: pointer;
-    background-color: #B3B3B3;
-}*/
-
 input[type=range] {
     -webkit-appearance: none;
-    width: 150px;
 }
 input[type=range]::-webkit-slider-thumb {
     -webkit-appearance: none;
@@ -510,11 +519,24 @@ input[type=range]::-webkit-slider-thumb:hover {
 }
 
 .volume-range {
+    width: 150px;
     height: 8px;
-    margin-top: 24px;
+    margin-top: 25px;
     cursor: pointer;
-    /*background-color: #B3B3B3;*/
     background: -webkit-linear-gradient(left, #bdae82 0%, #bdae82 50%, #B3B3B3 50%, #B3B3B3 100%);
+}
+
+.play-range {
+    width: 1020px;
+    height: 8px;
+    margin-top: 25px;
+    cursor: pointer;
+    /*background: -webkit-linear-gradient(left, #bdae82 0%, #bdae82 50%, #B3B3B3 50%, #B3B3B3 100%);*/
+    background: #bdae82;
+}
+
+.play-range progress::-webkit-progress-value { 
+    background: #bdae82; 
 }
 
 .icon_play {
@@ -532,6 +554,15 @@ input[type=range]::-webkit-slider-thumb:hover {
 .icon_play:hover {
     cursor: pointer;
     filter: invert(6%) sepia(12%) saturate(1156%) hue-rotate(338deg) brightness(80%) contrast(80%);
+}
+
+.icon_play-hidden {
+    filter: alpha(opacity=0);
+    -webkit-transition: opacity .5s ease-in-out;
+    -moz-transition: opacity .5s ease-in-out;
+    -o-transition: opacity .5s ease-in-out;
+    transition: opacity .5s ease-in-out;
+    opacity: 0;
 }
 
 /* ------------------ SECTION PRICE ----------------------*/
