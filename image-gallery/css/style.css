@@ -4,6 +4,7 @@
 }
 
 body {
+    font-size: 18px;
     color: #fff;
     background-color: #000;
     overflow-x: hidden;
@@ -15,6 +16,8 @@ body {
     margin: 0 auto;
     padding: 10px;
 }
+
+/*---------------------HEADER---------------------*/
 
 .header-container {
     display: flex;
@@ -82,4 +85,35 @@ body {
 
 input:focus::-webkit-input-placeholder {
     color: transparent;
+}
+
+/*---------------------FOOTER---------------------*/
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-top: #FFA608 solid 4px;
+}
+
+.footer-git {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 150px;
+}
+
+.fa-github::before {
+    color:#fff;
+    font-size: 40px;
+}
+
+.logo-rs-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 40px;
+    background-color: #fff;
 }
