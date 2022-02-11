@@ -4,9 +4,12 @@
 }
 
 body {
+    font-family: 'Montserrat', sans-serif;
     font-size: 18px;
-    color: #fff;
-    background-color: #000;
+    color: #555;
+    /*background-color: #323846;*/
+    /*background-color: #484e5d;*/
+    background-color: #f8f9f3;
     overflow-x: hidden;
 }
 
@@ -14,7 +17,7 @@ body {
     width: 100%;
     max-width: 1320px;
     margin: 0 auto;
-    padding: 10px;
+    padding: 0 10px;
 }
 
 /*---------------------HEADER---------------------*/
@@ -23,13 +26,17 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: #FFA608 solid 4px;
-    padding-bottom: 10px;
+    /*border-bottom: #FFA608 solid 4px;*/
+    /*border-bottom: #88d9f3 solid 4px;*/
+    border-bottom: #ffb6b6 solid 4px;
+    padding: 20px;
 }
 
 .title-container {
     display: flex;
     align-items: center;
+    font-family: 'Comfortaa', cursive;
+    color: #ffb6b6;
 }
 
 .header-logo {
@@ -41,7 +48,7 @@ body {
 
 .fa-camera::before {
     font-size: 32px;
-    color: #FFA608;
+    color: #ffb6b6;
 }
 
 .header-title {
@@ -50,11 +57,12 @@ body {
 
 .search-container {
     display: flex;
-    background-color: #fff;
     width: 300px;
     height: 20px;
     border-radius: 20px;
     padding: 10px;
+    background-color: #fff;
+    border: 2px solid #ffb6b6;
 }
 
 .header-search {
@@ -73,7 +81,7 @@ body {
     align-items: center;
     width: 20px;
     height: 20px;
-    color: #FFA608;
+    color: #ffb6b6;
     border-radius: 50%;
     text-decoration: none;
 }
@@ -87,6 +95,10 @@ input:focus::-webkit-input-placeholder {
     color: transparent;
 }
 
+.gallery-container {
+    padding: 10px 0;
+}
+
 /*---------------------FOOTER---------------------*/
 
 .footer-container {
@@ -94,7 +106,7 @@ input:focus::-webkit-input-placeholder {
     justify-content: space-between;
     align-items: center;
     padding: 10px 0;
-    border-top: #FFA608 solid 4px;
+    border-top: #ffb6b6 solid 4px;
 }
 
 .footer-git {
@@ -105,7 +117,7 @@ input:focus::-webkit-input-placeholder {
 }
 
 .fa-github::before {
-    color:#fff;
+    color:#555;
     font-size: 40px;
 }
 
@@ -115,5 +127,4 @@ input:focus::-webkit-input-placeholder {
     align-items: center;
     width: 80px;
     height: 40px;
-    background-color: #fff;
 }
