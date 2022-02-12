@@ -11,6 +11,7 @@ body {
     /*background-color: #484e5d;*/
     background-color: #f8f9f3;
     overflow-x: hidden;
+    transition: 0.5s;
 }
 
 .container {
@@ -36,7 +37,7 @@ body {
     display: flex;
     align-items: center;
     font-family: 'Comfortaa', cursive;
-    color: #ffb6b6;
+    color: #555;
 }
 
 .header-logo {
@@ -62,7 +63,7 @@ body {
     border-radius: 20px;
     padding: 10px;
     background-color: #fff;
-    border: 2px solid #ffb6b6;
+    border: 2px solid #ccc;
 }
 
 .header-search {
@@ -72,7 +73,7 @@ body {
     background: none;
     padding: 0 10px;
     font-size: 16px;
-    color: #ccc;
+    color: #555;
 }
 
 .search-btn {
@@ -91,11 +92,17 @@ body {
     font-size: 18px;
 }
 
+input::-webkit-input-placeholder {
+    color: #ccc;
+}
+
 input:focus::-webkit-input-placeholder {
     color: transparent;
 }
 
 .gallery-container {
+    display: flex;
+    flex-wrap: wrap;
     padding: 10px 0;
 }
 
@@ -119,6 +126,25 @@ input:focus::-webkit-input-placeholder {
 .fa-github::before {
     color:#555;
     font-size: 40px;
+}
+
+.fa-github:hover::before {
+    color: #ffb6b6;
+}
+
+.logo-rs {
+    width: 80px;
+    height: 40px;
+    display: inline-block;
+    background-image: url('../svg/rs_school_js.svg');
+    background-repeat: no-repeat;
+    filter: invert(31%) sepia(1%) saturate(0%) hue-rotate(156deg) brightness(99%) contrast(87%);
+    -webkit-filter: invert(31%) sepia(1%) saturate(0%) hue-rotate(156deg) brightness(99%) contrast(87%); 
+}
+
+:hover.logo-rs {
+    -webkit-filter: invert(88%) sepia(35%) saturate(4653%) hue-rotate(302deg) brightness(122%) contrast(120%);
+    filter: invert(88%) sepia(35%) saturate(4653%) hue-rotate(302deg) brightness(122%) contrast(120%);
 }
 
 .logo-rs-link {

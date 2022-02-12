@@ -1,5 +1,5 @@
 
-let url = 'https://api.unsplash.com/search/photos?query=spring&per_page=30&orientation=landscape&client_id=SouHY7Uul-OxoMl3LL3c0NkxUtjIrKwf3tsGk1JaiVo';
+let url = 'https://api.unsplash.com/search/photos?query=valentines&per_page=30&orientation=landscape&client_id=Y-CmsG-2i3eRkjJ5UwZRMR143_PB0-33BjCnysFKT0w';
 
 async function getData() {
     const res = await fetch(url);
@@ -22,7 +22,27 @@ function showData(data) {
         img.style.borderRadius = '20px';
         img.src = `${imgSrc}`;
         img.alt = `image`;
-        galleryContainer.append(img);
+        /*galleryContainer.append(img);*/
+
+        let download = i.links.download;
+        const imgContainer = document.createElement('div');
+        imgContainer.classList.add('img-container');
+        imgContainer.style.display = 'flex';
+        imgContainer.style.flexDirection = 'column';
+        imgContainer.style.justifyContent = 'center';
+        imgContainer.style.alignItems = 'center';
+        const downloadBtn = document.createElement('a');
+        downloadBtn.classList.add('download-img');
+        downloadBtn.href = `${download}`;
+        downloadBtn.textContent = 'Download';
+        downloadBtn.style.display = 'inline';
+        /*downloadBtn.style.position = 'absolute';
+        downloadBtn.style.right = '50%';*/
+        galleryContainer.append(imgContainer);
+        imgContainer.append(img);
+        imgContainer.append(downloadBtn);
+        /*galleryContainer.append(downloadBtn);*/
+        
     })
 }
 
@@ -30,7 +50,7 @@ const input = document.querySelector('.header-search');
 const searchBtn = document.querySelector('.search-btn');
 
 input.addEventListener('change', function(event) {
-    url = `https://api.unsplash.com/search/photos?query=${event.target.value}&per_page=30&orientation=landscape&client_id=SouHY7Uul-OxoMl3LL3c0NkxUtjIrKwf3tsGk1JaiVo`;
+    url = `https://api.unsplash.com/search/photos?query=${event.target.value}&per_page=30&orientation=landscape&client_id=Y-CmsG-2i3eRkjJ5UwZRMR143_PB0-33BjCnysFKT0w`;
     galleryContainer.innerHTML = '';
     getData();
 }) 
