@@ -31,18 +31,30 @@ function showData(data) {
         imgContainer.style.flexDirection = 'column';
         imgContainer.style.justifyContent = 'center';
         imgContainer.style.alignItems = 'center';
+        imgContainer.style.position = 'relative';
         const downloadBtn = document.createElement('a');
         downloadBtn.classList.add('download-img');
         downloadBtn.href = `${download}`;
-        downloadBtn.textContent = 'Download';
         downloadBtn.style.display = 'inline';
-        /*downloadBtn.style.position = 'absolute';
-        downloadBtn.style.right = '50%';*/
+        downloadBtn.style.textDecoration = 'none';
+        downloadBtn.style.color = '#ccc';
+        downloadBtn.style.position = 'absolute';
+        downloadBtn.style.right = '30px';
+        downloadBtn.style.bottom = '30px';
+        downloadBtn.style.backgroundColor = '#fff';
+        downloadBtn.style.borderRadius = '50%';
+        downloadBtn.style.padding = '10px';
+        downloadBtn.style.opacity = '.8';
+        downloadBtn.target = '_blank';
         galleryContainer.append(imgContainer);
         imgContainer.append(img);
         imgContainer.append(downloadBtn);
-        /*galleryContainer.append(downloadBtn);*/
         
+        const iconDownload = document.createElement('span');
+        iconDownload.classList.add('fa');
+        iconDownload.classList.add('fa-download');
+        iconDownload.style.fontSize = '24px';
+        downloadBtn.append(iconDownload);
     })
 }
 

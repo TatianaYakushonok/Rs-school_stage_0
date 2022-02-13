@@ -63,7 +63,7 @@ body {
     border-radius: 20px;
     padding: 10px;
     background-color: #fff;
-    border: 2px solid #ccc;
+    border: 1px solid #ccc;
 }
 
 .header-search {
@@ -73,7 +73,7 @@ body {
     background: none;
     padding: 0 10px;
     font-size: 16px;
-    color: #555;
+    color: #ccc;
 }
 
 .search-btn {
@@ -153,4 +153,8 @@ input:focus::-webkit-input-placeholder {
     align-items: center;
     width: 80px;
     height: 40px;
+}
+
+.hover {
+    color: #ffb6b6;
 }
