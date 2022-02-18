@@ -3,7 +3,14 @@
     padding: 0;
 }
 
+html {
+    height: 100%;
+}
+
 body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
     font-family: 'Montserrat', sans-serif;
     font-size: 18px;
     color: #555;
@@ -22,6 +29,10 @@ body {
 }
 
 /*---------------------HEADER---------------------*/
+
+header {
+    flex: 0 0 auto;
+}
 
 .header-container {
     display: flex;
@@ -100,6 +111,10 @@ input:focus::-webkit-input-placeholder {
     color: transparent;
 }
 
+main {
+    flex: 1 0 auto;
+}
+
 .gallery-container {
     display: flex;
     flex-wrap: wrap;
@@ -107,6 +122,10 @@ input:focus::-webkit-input-placeholder {
 }
 
 /*---------------------FOOTER---------------------*/
+
+footer {
+    flex: 0 0 auto;
+}
 
 .footer-container {
     display: flex;
