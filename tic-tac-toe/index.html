@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.min.css">
     <title>Game Tic-tac-toe</title>
 </head>
 <body>
@@ -31,6 +32,8 @@
             <p class="name-player2"></p>
         </div>
 
+        <button class="btn-open">Open the winners table</button>
+
         <div class="name-container">
             <div class="name-overlay"></div>
             <div class="window-modal">
@@ -49,7 +52,17 @@
             <div class="window-overlay"></div>
             <div class="modal">
                 <div class="content"></div>
-                <button class="btn-close">Close</button>
+                <button class="btn-close"><i class="fa fa-times" aria-hidden="true"></i></button>
+            </div>
+        </div>
+
+        <div class="table-winner">
+            <div class="table-overlai">
+                <ul class="table-win">
+                    <li class="table-title">10 Last games</li>
+                    <button class="btn-close-winners"><i class="fa fa-times" aria-hidden="true"></i></button>
+                    <ul class="table"></ul>
+                </ul>
             </div>
         </div>
     </section>

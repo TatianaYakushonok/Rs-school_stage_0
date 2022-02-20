@@ -6,6 +6,14 @@ let featurePlayer1 = 'X';
 let featurePlayer2 = '0';
 //let namePayer = '';
 
+const winnerObj = {
+    name: resultPlayer1,
+    step: step,
+    score: 0
+}
+
+let arrObj = [];
+
 const boxes = document.querySelectorAll('.box');
 
 const nameContainer = document.querySelector('.name-container');
@@ -20,7 +28,13 @@ const contentWindow = document.querySelector('.content');
 const windowOverlay = document.querySelector('.window-overlay');
 const BtnClose = document.querySelector('.btn-close');
 
+const table = document.querySelector('.table-winner');
+const winnerTable = document.querySelector('.table');
+const btnOpenWinners = document.querySelector('.btn-open');
+const btnCloseWinners = document.querySelector('.btn-close-winners');
+
 window.onload = function() {
+    localStorage.getItem('winnerObj')
     nameContainer.style.display = 'block';
 }
 
@@ -49,6 +63,7 @@ inputName2.addEventListener('keyup', event => {
 function showWinner(winner) {
     contentWindow.innerHTML = `Player ${winner} has won!`;
     windowContainer.style.display = 'block';
+    
     boxes.forEach((item)  => {
         item.textContent = '';
     })
@@ -80,24 +95,67 @@ function determWinnings() {
 		) {
             namePlayer1.innerHTML = `${inputName1.value} : ${featurePlayer1} ${resultPlayer1+=1}`;
             showWinner(inputName1.value);
-            //result = 'крестики';
-            //console.log('Победили крестики');
-			//prepareResult(result);
+            winnerObj.name = inputName1.value;
+            winnerObj.step = step;
+            winnerObj.score = resultPlayer1;
+
+            arrObj.push(Object.entries(winnerObj));
+
+            localStorage.setItem('winnerObj', JSON.stringify(arrObj));
+            let restoredSession = JSON.parse(localStorage.getItem('winnerObj'));
+
+            console.log(restoredSession);
+
+            restoredSession.map((i) => {
+                const list = document.createElement('li');
+                list.classList.add('table-list');
+                list.textContent = i[0][1] + '  ' + i[1][1] + '  ' + i[2][1];
+                list.style.padding = '5px';
+                winnerTable.append(list);
+            })
+
+            /*winnerList.forEach((item)  => {
+                item.textContent = restoredSession;
+            })
+
+            const abjArr = Object.entries(winnerObj);
+
+            abjArr.forEach(([key, value]) => {
+            console.table(key, value);
+            });*/
+            step = 0;
 		} 
 		if (
 		    boxes[arrBox[i][0]].innerHTML == '0' && boxes[arrBox[i][1]].innerHTML == '0' && boxes[arrBox[i][2]].innerHTML == '0'
 		) {
             namePlayer2.innerHTML = `${inputName2.value} : ${featurePlayer2} ${resultPlayer2+=1}`;
             showWinner(inputName2.value);
-            //result = 'нолики';
-            //console.log('Победили нолики');
-			//prepareResult(result);
+            winnerObj.name = inputName2.value;
+            winnerObj.step = step;
+            winnerObj.score = resultPlayer2;
+
+            arrObj.push(Object.entries(winnerObj));
+
+            localStorage.setItem('winnerObj', JSON.stringify(arrObj));
+            let restoredSession = JSON.parse(localStorage.getItem('winnerObj'));
+
+            console.log(restoredSession);
+            /*const abjArr = Object.entries(winnerObj);
+
+            abjArr.forEach(([key, value]) => {
+            console.table(key, value);
+            });*/
+            step = 0;
         }
+
     }
     
     if (step == 9) {
-        result = 'ничья';
-        console.log('Ничья');
+        contentWindow.innerHTML = `Game ended in a draw!`;
+        windowContainer.style.display = 'block';
+        boxes.forEach((item)  => {
+            item.textContent = '';
+        })
     }
 
 }
@@ -115,3 +173,13 @@ function activeBox(event) {
 }
 
 boxContainer.addEventListener('click', activeBox);
+
+
+btnOpenWinners.addEventListener('click', () => {
+    table.style.display = 'block';
+})
+
+btnCloseWinners.addEventListener('click', () => {
+    table.style.display = 'none';
+})
+
