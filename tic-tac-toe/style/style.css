@@ -1,0 +1,359 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff; 
+    background-color: #191725;
+}
+
+button { 
+    padding: 0; 
+    border: none; 
+    font: inherit; 
+    color: inherit; 
+    background-color: transparent;
+    cursor: pointer; 
+} 
+
+li {
+    list-style-type: none;
+}
+
+input[type="text"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  /*appearance: none;*/
+  outline: none;
+  box-shadow: none;
+  background: none;
+  border: none;
+}
+
+input::-webkit-input-placeholder {
+    color: #ccc;
+}
+
+input:focus::-webkit-input-placeholder {
+    color: transparent;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+	justify-content: center;
+	align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.title {
+    padding: 20px;
+    font-family: 'Righteous', cursive; 
+    font-size: 45px;
+    color: #ffd300;
+}
+
+.box-container {
+    width: 300px;
+	height: 300px;
+    /*background-color: #22202d;*/
+    border-radius: 10px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.box {
+	width: 100px;
+	height: 100px;
+    border: 1px solid #191725;
+    background-color: #22202d;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-family: "Permanent Marker", cursive;
+	font-size: 60px;
+    color: #fff;
+    line-height: 100px;
+	display: flex;
+	justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.player-container {
+    width: 350px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 24px;
+}
+
+.name-container {
+    width: 100%;
+	height: 100%;
+	top: 0;
+    left: 0;
+    display: none;
+}
+
+.name-overlay {
+    width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+    background-color: rgba(0, 0, 0, .8);
+}
+
+.window-modal {
+    width: 200px;
+    height: 150px;
+    padding: 20px;
+    /*border: 1px solid #000;*/
+    border-radius: 10px;
+	background-color: #191725;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+	flex-flow: column;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.name1-player,
+.name2-player {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 190px;
+    height: 30px;
+    border-radius: 20px;
+    padding: 5px;
+    background-color: #22202d;
+}
+
+.text-name1,
+.text-name2{
+    width: 190px;
+    padding: 0 10px;
+    font-size: 16px;
+    color: #fff;
+    border: none;
+    outline: none;
+    background: transparent;
+    box-shadow: none;
+    position: relative;
+    /*width: 180px;
+    height: 20px;
+    border-radius: 20px;
+    padding: 5px;
+    background-color: #22202d;
+    border: 1px solid #22202d;*/
+}
+
+.name1 {
+    position: absolute;
+    top: 12px;
+    color: #eb5f84;
+}
+
+.name2 {
+    position: absolute;
+    top: 90px;
+    color: #eb5f84;
+}
+
+.window-container {
+    width: 100%;
+    height: 100%;
+	top: 0;
+    left: 0;
+    display: none;
+}
+
+.window-overlay {
+    width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+    background-color: rgba(0, 0, 0, .8);
+    /*background-color: #111;*/
+}
+
+.modal {
+    width: 250px;
+    height: 250px;
+    padding: 20px;
+    border: 1px solid #000;
+    border-radius: 10px;
+	background-color: #191725;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+	flex-flow: column;
+	justify-content: space-around;
+	align-items: center;
+}
+
+@-webkit-keyframes pulsate {
+    50% { color: #fff; text-shadow: 0 -1px rgba(0,0,0,.3), 0 0 5px #ffd, 0 0 8px #fff; }
+   }
+   @keyframes pulsate {
+    50% { color: #fff; text-shadow: 0 -1px rgba(0,0,0,.3), 0 0 5px #ffd, 0 0 8px #fff; }
+   }
+   .content {
+     color: rgb(245,245,245);
+     text-shadow: 0 -1px rgba(0,0,0,.1);
+     /*background: green;*/
+     -webkit-animation: pulsate 1.2s linear infinite;
+     animation: pulsate 1.2s linear infinite;
+   }
+
+.content {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.table-title {
+    width: 200px;
+    padding-bottom: 10px;
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    position: absolute;
+	top: 10px;
+	left: 50px;
+}
+
+.table-winner {
+    width: 100%;
+    height: 100%;
+	top: 0;
+    left: 0;
+    display: none;
+}
+
+.table-overlai {
+    width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, .8);
+}
+
+.table-win {
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+	background-color: #191725;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    /*justify-content: space-between;*/
+}
+
+.table {
+    position: absolute;
+    top: 50px;
+    left: 20px;
+}
+
+.btn-close,
+.btn-close-winners {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.btn-open {
+    width: 200px;
+    height: 40px;
+    padding: 10px;
+    background-color: #eb5f84;
+    border-radius: 40px;
+    color: #191725;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.btn-open:hover {
+    color: #fff;
+    box-shadow: 0 0 10px #eb5f84;
+}
+
+/*--------------------------FOOTER--------------------------*/
+
+footer {
+    flex: 0 0 auto;
+}
+
+.footer-container {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding: 10px 0;
+    border-top: 1px solid #555;
+}
+
+.footer-git {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 150px;
+}
+
+.fa-github::before {
+    color:#555;
+    font-size: 40px;
+}
+
+.fa-github:hover::before {
+    color: #eb5f84;
+}
+
+.logo-rs {
+    width: 80px;
+    height: 40px;
+    display: inline-block;
+    background-image: url('../svg/rs_school_js.svg');
+    background-repeat: no-repeat;
+    filter: invert(31%) sepia(1%) saturate(0%) hue-rotate(156deg) brightness(99%) contrast(87%);
+    -webkit-filter: invert(31%) sepia(1%) saturate(0%) hue-rotate(156deg) brightness(99%) contrast(87%); 
+}
+
+:hover.logo-rs {
+    -webkit-filter: invert(55%) sepia(48%) saturate(1777%) hue-rotate(307deg) brightness(94%) contrast(97%);
+    filter: invert(55%) sepia(48%) saturate(1777%) hue-rotate(307deg) brightness(94%) contrast(97%);
+}
+
+.logo-rs-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 40px;
+}
+
+.hover {
+    color: #ffb6b6;
+}
