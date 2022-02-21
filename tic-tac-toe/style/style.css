@@ -7,7 +7,9 @@ body {
     width: 100%;
     height: 100%;
     margin: 0 auto;
-    font-family: 'Montserrat', sans-serif; 
+    font-family: 'Montserrat', sans-serif;
+    color: #fff; 
+    background-color: #191725;
 }
 
 button { 
@@ -23,6 +25,25 @@ li {
     list-style-type: none;
 }
 
+input[type="text"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  /*appearance: none;*/
+  outline: none;
+  box-shadow: none;
+  background: none;
+  border: none;
+}
+
+input::-webkit-input-placeholder {
+    color: #ccc;
+}
+
+input:focus::-webkit-input-placeholder {
+    color: transparent;
+}
+
 .container {
     display: flex;
     flex-direction: column;
@@ -36,12 +57,14 @@ li {
     padding: 20px;
     font-family: 'Righteous', cursive; 
     font-size: 45px;
+    color: #ffd300;
 }
 
 .box-container {
     width: 300px;
 	height: 300px;
-	background-color: #ccc;
+    /*background-color: #22202d;*/
+    border-radius: 10px;
 	display: flex;
 	flex-wrap: wrap;
 }
@@ -49,11 +72,13 @@ li {
 .box {
 	width: 100px;
 	height: 100px;
-	border: 1px solid #555;
+    border: 1px solid #191725;
+    background-color: #22202d;
+    border-radius: 10px;
     box-sizing: border-box;
     font-family: "Permanent Marker", cursive;
 	font-size: 60px;
-    color: #000;
+    color: #fff;
     line-height: 100px;
 	display: flex;
 	justify-content: center;
@@ -84,15 +109,16 @@ li {
 	position: absolute;
 	top: 0;
 	left: 0;
-	background-color: rgba(0, 0, 0, .8);
+    background-color: rgba(0, 0, 0, .8);
 }
 
 .window-modal {
     width: 200px;
     height: 150px;
     padding: 20px;
-	border: 1px solid #000;
-	background-color: #fff;
+    /*border: 1px solid #000;*/
+    border-radius: 10px;
+	background-color: #191725;
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -101,6 +127,49 @@ li {
 	flex-flow: column;
 	justify-content: space-around;
 	align-items: center;
+}
+
+.name1-player,
+.name2-player {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 190px;
+    height: 30px;
+    border-radius: 20px;
+    padding: 5px;
+    background-color: #22202d;
+}
+
+.text-name1,
+.text-name2{
+    width: 190px;
+    padding: 0 10px;
+    font-size: 16px;
+    color: #fff;
+    border: none;
+    outline: none;
+    background: transparent;
+    box-shadow: none;
+    position: relative;
+    /*width: 180px;
+    height: 20px;
+    border-radius: 20px;
+    padding: 5px;
+    background-color: #22202d;
+    border: 1px solid #22202d;*/
+}
+
+.name1 {
+    position: absolute;
+    top: 12px;
+    color: #eb5f84;
+}
+
+.name2 {
+    position: absolute;
+    top: 90px;
+    color: #eb5f84;
 }
 
 .window-container {
@@ -117,15 +186,17 @@ li {
 	position: absolute;
 	top: 0;
 	left: 0;
-	background-color: rgba(0, 0, 0, .8);
+    background-color: rgba(0, 0, 0, .8);
+    /*background-color: #111;*/
 }
 
 .modal {
     width: 250px;
     height: 250px;
     padding: 20px;
-	border: 1px solid #000;
-	background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 10px;
+	background-color: #191725;
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -135,6 +206,20 @@ li {
 	justify-content: space-around;
 	align-items: center;
 }
+
+@-webkit-keyframes pulsate {
+    50% { color: #fff; text-shadow: 0 -1px rgba(0,0,0,.3), 0 0 5px #ffd, 0 0 8px #fff; }
+   }
+   @keyframes pulsate {
+    50% { color: #fff; text-shadow: 0 -1px rgba(0,0,0,.3), 0 0 5px #ffd, 0 0 8px #fff; }
+   }
+   .content {
+     color: rgb(245,245,245);
+     text-shadow: 0 -1px rgba(0,0,0,.1);
+     /*background: green;*/
+     -webkit-animation: pulsate 1.2s linear infinite;
+     animation: pulsate 1.2s linear infinite;
+   }
 
 .content {
     font-size: 18px;
@@ -172,8 +257,8 @@ li {
 .table-win {
     width: 300px;
     height: 300px;
-    border: 1px solid #000;
-	background-color: #fff;
+    border-radius: 10px;
+	background-color: #191725;
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -199,8 +284,17 @@ li {
 }
 
 .btn-open {
-    width: 250px;
+    width: 200px;
     height: 40px;
     padding: 10px;
-    background-color: aqua;
+    background-color: #eb5f84;
+    border-radius: 40px;
+    color: #191725;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.btn-open:hover {
+    color: #fff;
+    box-shadow: 0 0 10px #eb5f84;
 }

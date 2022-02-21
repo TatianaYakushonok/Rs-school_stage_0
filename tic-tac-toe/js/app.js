@@ -40,23 +40,23 @@ window.onload = function() {
 
 nameOverlay.addEventListener('click', () => {
     nameContainer.style.display = 'none';
-    namePlayer1.innerHTML = `${inputName1.value} : ${featurePlayer1} ${resultPlayer1}`;
-    namePlayer2.innerHTML = `${inputName2.value} : ${featurePlayer2} ${resultPlayer2}`;
+    namePlayer1.innerHTML = `${inputName1.value} - ${featurePlayer1} ${resultPlayer1} `;
+    namePlayer2.innerHTML = `${resultPlayer2}  ${featurePlayer2} - ${inputName2.value}`;
 })
 
 inputName1.addEventListener('keyup', event => {
     if(event.code === 'Enter') {
         nameContainer.style.display = 'none';
-        namePlayer1.innerHTML = `${inputName1.value} : ${featurePlayer1} ${resultPlayer1}`;
-        namePlayer2.innerHTML = `${inputName2.value} : ${featurePlayer2} ${resultPlayer2}`;   
+        namePlayer1.innerHTML = `${inputName1.value} - ${featurePlayer1} ${resultPlayer1} `;
+        namePlayer2.innerHTML = `${resultPlayer2}  ${featurePlayer2} - ${inputName2.value}`;   
     }
 })
 
 inputName2.addEventListener('keyup', event => {
     if(event.code === 'Enter') {
         nameContainer.style.display = 'none';
-        namePlayer1.innerHTML = `${inputName1.value} : ${featurePlayer1} ${resultPlayer1}`;
-        namePlayer2.innerHTML = `${inputName2.value} : ${featurePlayer2} ${resultPlayer2}`;   
+        namePlayer1.innerHTML = `${inputName1.value} - ${featurePlayer1} ${resultPlayer1} `;
+        namePlayer2.innerHTML = `${resultPlayer2}  ${featurePlayer2} - ${inputName2.value}`;  
     }
 })
 
@@ -93,7 +93,8 @@ function determWinnings() {
 		if(
 		    boxes[arrBox[i][0]].innerHTML == 'X' && boxes[arrBox[i][1]].innerHTML == 'X' && boxes[arrBox[i][2]].innerHTML == 'X'
 		) {
-            namePlayer1.innerHTML = `${inputName1.value} : ${featurePlayer1} ${resultPlayer1+=1}`;
+            //boxes[arrBox][i][0].style.color = '#eb5f84';
+            namePlayer1.innerHTML = `${inputName1.value} - ${featurePlayer1} ${resultPlayer1+=1}`;
             showWinner(inputName1.value);
             winnerObj.name = inputName1.value;
             winnerObj.step = step;
@@ -128,7 +129,7 @@ function determWinnings() {
 		if (
 		    boxes[arrBox[i][0]].innerHTML == '0' && boxes[arrBox[i][1]].innerHTML == '0' && boxes[arrBox[i][2]].innerHTML == '0'
 		) {
-            namePlayer2.innerHTML = `${inputName2.value} : ${featurePlayer2} ${resultPlayer2+=1}`;
+            namePlayer2.innerHTML = `${resultPlayer2+=1} - ${featurePlayer2} ${inputName2.value}`;
             showWinner(inputName2.value);
             winnerObj.name = inputName2.value;
             winnerObj.step = step;
@@ -140,6 +141,14 @@ function determWinnings() {
             let restoredSession = JSON.parse(localStorage.getItem('winnerObj'));
 
             console.log(restoredSession);
+
+            restoredSession.map((i) => {
+                const list = document.createElement('li');
+                list.classList.add('table-list');
+                list.textContent = i[0][1] + '  ' + i[1][1] + '  ' + i[2][1];
+                list.style.padding = '5px';
+                winnerTable.append(list);
+            })
             /*const abjArr = Object.entries(winnerObj);
 
             abjArr.forEach(([key, value]) => {
@@ -158,6 +167,13 @@ function determWinnings() {
         })
     }
 
+    boxes.forEach((item)  => {
+        if(item.innerHTML == 'X') {
+            item.style.color = '#eb5f84';
+        } else {
+            item.style.color = '#3fe0d0';
+        }
+    }) 
 }
 
 function activeBox(event) {
