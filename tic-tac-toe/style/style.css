@@ -298,3 +298,62 @@ input:focus::-webkit-input-placeholder {
     color: #fff;
     box-shadow: 0 0 10px #eb5f84;
 }
+
+/*--------------------------FOOTER--------------------------*/
+
+footer {
+    flex: 0 0 auto;
+}
+
+.footer-container {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding: 10px 0;
+    border-top: 1px solid #555;
+}
+
+.footer-git {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 150px;
+}
+
+.fa-github::before {
+    color:#555;
+    font-size: 40px;
+}
+
+.fa-github:hover::before {
+    color: #eb5f84;
+}
+
+.logo-rs {
+    width: 80px;
+    height: 40px;
+    display: inline-block;
+    background-image: url('../svg/rs_school_js.svg');
+    background-repeat: no-repeat;
+    filter: invert(31%) sepia(1%) saturate(0%) hue-rotate(156deg) brightness(99%) contrast(87%);
+    -webkit-filter: invert(31%) sepia(1%) saturate(0%) hue-rotate(156deg) brightness(99%) contrast(87%); 
+}
+
+:hover.logo-rs {
+    -webkit-filter: invert(55%) sepia(48%) saturate(1777%) hue-rotate(307deg) brightness(94%) contrast(97%);
+    filter: invert(55%) sepia(48%) saturate(1777%) hue-rotate(307deg) brightness(94%) contrast(97%);
+}
+
+.logo-rs-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 40px;
+}
+
+.hover {
+    color: #ffb6b6;
+}
